@@ -1,4 +1,5 @@
 import csv
+from pathlib import Path
 
 # We define the explicit mapping for each of the 115 raw genres present in NetflixOriginals.csv
 # Columns: raw_genre, genre_group, classification_rule
@@ -121,8 +122,11 @@ mapping = [
     ("Zombie/Heist", "Thriller/Crime/Horror", "Zombie/heist hybrid")
 ]
 
-# Write to data/external/genre_group_map.csv
-out_path = r"c:\Users\naman\OneDrive\Desktop\Work\PowerBI\data\external\genre_group_map.csv"
+# Write to data/external/genre_group_map.csv relative to this project on your laptop
+project_root = Path(__file__).resolve().parents[1]
+out_path = project_root / "data" / "external" / "genre_group_map.csv"
+out_path.parent.mkdir(parents=True, exist_ok=True)
+
 with open(out_path, mode='w', newline='', encoding='utf-8') as f:
     writer = csv.writer(f)
     writer.writerow(["raw_genre", "genre_group", "classification_rule"])

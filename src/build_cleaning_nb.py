@@ -1,5 +1,7 @@
 import json
+from pathlib import Path
 
+project_root = Path(__file__).resolve().parents[1]
 notebook = {
     "cells": [
         {
@@ -298,7 +300,9 @@ notebook = {
     "nbformat_minor": 2
 }
 
-with open(r"c:\Users\naman\OneDrive\Desktop\Work\PowerBI\notebooks\01_cleaning.ipynb", "w", encoding="utf-8") as f:
+out_nb_path = project_root / "notebooks" / "01_cleaning.ipynb"
+out_nb_path.parent.mkdir(parents=True, exist_ok=True)
+with open(out_nb_path, "w", encoding="utf-8") as f:
     json.dump(notebook, f, indent=2)
 
-print("Created notebooks/01_cleaning.ipynb successfully.")
+print(f"Created {out_nb_path} successfully.")

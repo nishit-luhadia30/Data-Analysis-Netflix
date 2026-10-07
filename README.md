@@ -172,7 +172,64 @@ jupyter nbconvert --to notebook --execute notebooks/02_analysis.ipynb --inplace
 
 ---
 
-## 8. Dashboard Layout & Visual Previews
+## 8. Power BI Dashboard Snapshot & Business Story
+
+The Power BI solution translates the analysis into a 3-page executive package designed for a content strategy, portfolio planning, and acquisition review. Full build instructions and wireframes are documented in [`powerbi/dashboard_spec.md`](powerbi/dashboard_spec.md) and [`powerbi/build_steps.md`](powerbi/build_steps.md).
+
+### Dashboard Snapshot (executive view)
+
+```text
+┌───────────────────────────────────────────────────────────────────────────────────────────────────────┐
+│ PAGE 1: PORTFOLIO OVERVIEW & RELEASE DYNAMICS                                                     │
+│                                                                                               │
+│ KPI Cards: 584 total titles | 503 mature titles | Avg runtime 93.6 min | Avg IMDb 6.27        │
+│                                                                                               │
+│ Annual volume ↑ from 30 in 2016 to 183 in 2020; Friday release cadence captures 65.6% of all   │
+│ premieres. Documentary leads portfolio share (27.9%), while English dominates primary language   │
+│ mix (71.7%).                                                                                 │
+│                                                                                               │
+│ Visuals: release trend line, genre share treemap, language concentration bar chart, Friday      │
+│ cadence heatmap.                                                                             │
+└───────────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+┌───────────────────────────────────────────────────────────────────────────────────────────────────────┐
+│ PAGE 2: PERCEIVED QUALITY & FORMAT ANALYSIS                                                     │
+│                                                                                               │
+│ Documentary & Music/Specials outperform the catalog average (6.93 and 6.68), while Comedy and │
+│ Thriller/Crime/Horror sit below 5.8. Runtime is statistically unrelated to score (rho = -0.022).│
+│                                                                                               │
+│ Visuals: genre benchmark chart, acclaim distribution by rating band, runtime vs. IMDb scatter, │
+│ language quality comparison.                                                                │
+└───────────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+┌───────────────────────────────────────────────────────────────────────────────────────────────────────┐
+│ PAGE 3: OUTLIERS & STRATEGIC OPPORTUNITY MATRIX                                                 │
+│                                                                                               │
+│ Highlights short-format and epic-duration outliers, plus low-sample and underperforming market   │
+│ combinations. Identifies where content strategy should scale, de-risk, or avoid overinvestment. │
+│                                                                                               │
+│ Visuals: outlier table, strategic opportunity matrix, genre-language heatmap, quality gap view. │
+└───────────────────────────────────────────────────────────────────────────────────────────────────────┘
+```
+
+### Business interpretation
+
+- Portfolio strategy: Netflix expanded aggressively, but scale was not evenly distributed across quality tiers.
+- Quality gate insight: high-volume scripted categories are the largest risk to audience trust and retention.
+- Regional opportunity: non-English content has promising quality signals but insufficient scale in the current portfolio.
+- Format insight: runtime constraints should not be treated as a performance driver; narrative quality and fit to audience demand matter more.
+
+### Power BI design summary
+
+| Page | Core Question | Primary Visuals | Decision Value |
+| :--- | :--- | :--- | :--- |
+| Portfolio Overview | How is the catalog structured and growing? | Yearly release volume, genre mix, language dominance, release cadence | Understand operational scale and portfolio concentration |
+| Quality Analysis | Which genres and languages are under/overperforming? | IMDb benchmark chart, acclaim bands, runtime-quality scatter | Identify content quality risk and opportunity |
+| Outliers & Strategy | Where are the strongest and weakest strategic positions? | Outlier explorer, opportunity matrix, heatmaps | Guide greenlight and investment decisions |
+
+---
+
+## 9. Dashboard Layout & Detailed Visual Previews
 
 The Power BI dashboard is designed across 3 focused pages. Full build instructions and wireframes are documented in [`powerbi/dashboard_spec.md`](powerbi/dashboard_spec.md) and [`powerbi/build_steps.md`](powerbi/build_steps.md).
 
@@ -194,8 +251,9 @@ The Power BI dashboard is designed across 3 focused pages. Full build instructio
 | PAGE 3: OUTLIERS & STRATEGIC OPPORTUNITY MATRIX                                                       |
 | - Statistical Outlier Explorer Table (Shorts vs. Epic Features vs. Score Extremes)                    |
 | - Strategic Matrix Quadrants: Volume vs. Average Perceived Quality                                    |
-| - Genre Group x Primary Language Opportunity Heatmap Grid (Highlighting Core vs. Risk Segments)       |
+| - Genre Group x Primary Language Opportunity Heatmap Grid (Highlighting Core vs. Risk Segments)     |
 +-------------------------------------------------------------------------------------------------------+
+```nts)       |+-------------------------------------------------------------------------------------------------------+
 ```
 
 *(Placeholder for exported dashboard screenshots: `reports/screenshots/page1_portfolio_overview.png`, `page2_quality_analysis.png`, `page3_outliers_opportunities.png`)*
