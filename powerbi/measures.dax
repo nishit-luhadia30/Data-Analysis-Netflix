@@ -1,0 +1,171 @@
+// ============================================================================
+// powerbi/measures.dax
+// Core DAX Analytical Measures for Netflix Originals Power BI Model
+// Target: Power BI Desktop Model
+// Author: Data Strategy & Analytics
+// ============================================================================
+
+// ----------------------------------------------------------------------------
+// 1. Total Titles (Distinct Count)
+// Purpose: Baseline volume measure. Uses DISTINCTCOUNT to guarantee that
+// titles are never double counted across bridge tables or multiple slices.
+// ----------------------------------------------------------------------------
+Total Titles = 
+DISTINCTCOUNT(fact_titles[title_id])
+
+
+// ----------------------------------------------------------------------------
+// 2. Average IMDb Score
+// Purpose: Core perceived quality KPI across the selected context.
+// ----------------------------------------------------------------------------
+Avg IMDb Score = 
+AVERAGE(fact_titles[imdb_score])
+
+
+// ----------------------------------------------------------------------------
+// 3. Median IMDb Score
+// Purpose: Robust non-parametric central tendency measure resistant to rating extremes.
+// ----------------------------------------------------------------------------
+Median IMDb Score = 
+MEDIAN(fact_titles[imdb_score])
+
+
+// ----------------------------------------------------------------------------
+// 4. % High-Rated Titles (Acclaim Share >= 7.0)
+// Purpose: Computes the proportion of releases achieving an IMDb score of 7.0
+// or higher (critical acclaim floor).
+// ----------------------------------------------------------------------------
+% High-Rated Titles = 
+VAR HighRatedCount = 
+    CALCULATE(
+        [Total Titles],
+        fact_titles[imdb_score] >= 7.0
+    )
+VAR OverallTitles = [Total Titles]
+RETURN
+    DIVIDE(HighRatedCount, OverallTitles, 0)
+
+
+// ----------------------------------------------------------------------------
+// 5. % Low-Rated Titles (Quality Floor < 5.5)
+// Purpose: Computes the proportion of releases falling below 5.5.
+// ----------------------------------------------------------------------------
+% Low-Rated Titles = 
+VAR LowRatedCount = 
+    CALCULATE(
+        [Total Titles],
+        fact_titles[imdb_score] < 5.5
+    )
+VAR OverallTitles = [Total Titles]
+RETURN
+    DIVIDE(LowRatedCount, OverallTitles, 0)
+
+
+// ----------------------------------------------------------------------------
+// 6. Average Runtime (Minutes)
+// Purpose: Mean runtime of releases in minutes.
+// ----------------------------------------------------------------------------
+Avg Runtime = 
+AVERAGE(fact_titles[runtime])
+
+
+// ----------------------------------------------------------------------------
+// 7. Full-Year Titles Only
+// Purpose: Filters out sparse (2014-2015) and partial (2021) years.
+// ----------------------------------------------------------------------------
+Mature Period Titles = 
+CALCULATE(
+    [Total Titles],
+    dim_date[is_full_year] = 1
+)
+
+
+// ----------------------------------------------------------------------------
+// 8. Titles YoY Change % (Full Years Only: 2016-2020)
+// Purpose: Computes Year-over-Year release volume expansion strictly for
+// complete annual periods, preventing distorted comparisons against 2014, 2015, or 2021.
+// ----------------------------------------------------------------------------
+Titles YoY Growth % = 
+VAR CurrentYear = SELECTEDVALUE(dim_date[year])
+VAR IsCurrentFull = SELECTEDVALUE(dim_date[is_full_year])
+VAR CurrentReleases = [Total Titles]
+VAR PriorYearReleases = 
+    CALCULATE(
+        [Total Titles],
+        FILTER(
+            ALL(dim_date),
+            dim_date[year] = CurrentYear - 1 &&
+            dim_date[is_full_year] = 1
+        )
+    )
+RETURN
+    IF(
+        IsCurrentFull = 1 && NOT ISBLANK(PriorYearReleases) && PriorYearReleases > 0,
+        DIVIDE(CurrentReleases - PriorYearReleases, PriorYearReleases, BLANK()),
+        BLANK()
+    )
+
+
+// ----------------------------------------------------------------------------
+// 9. Top Genre Share %
+// Purpose: Measures portfolio concentration by calculating the proportion
+// of catalog titles held by the single largest genre in the current filter context.
+// ----------------------------------------------------------------------------
+Top Genre Share % = 
+VAR MaxGenreTitles = 
+    MAXX(
+        VALUES(fact_titles[genre_group]),
+        [Total Titles]
+    )
+VAR AllTitles = 
+    CALCULATE(
+        [Total Titles],
+        ALLSELECTED(fact_titles[genre_group])
+    )
+RETURN
+    DIVIDE(MaxGenreTitles, AllTitles, 0)
+
+
+// ----------------------------------------------------------------------------
+// 10. Language Diversity Count
+// Purpose: Count of distinct primary languages represented in the catalog.
+// ----------------------------------------------------------------------------
+Language Diversity Count = 
+DISTINCTCOUNT(fact_titles[primary_language])
+
+
+// ----------------------------------------------------------------------------
+// 11. Titles in Low-Sample Groups (Flagged n < 10)
+// Purpose: Governance measure that totals titles belonging to categories with
+// fewer than 10 releases, alerting the analyst to sample fragility.
+// ----------------------------------------------------------------------------
+Titles in Low-Sample Groups = 
+VAR CurrentGroupSize = [Total Titles]
+RETURN
+    IF(CurrentGroupSize < 10, CurrentGroupSize, 0)
+
+
+// ----------------------------------------------------------------------------
+// 12. Low-Sample Warning Flag
+// Purpose: Text label for visual headers indicating statistical reliability.
+// ----------------------------------------------------------------------------
+Sample Reliability Badge = 
+VAR TitleCount = [Total Titles]
+RETURN
+    IF(
+        TitleCount < 10,
+        "⚠️ Low Sample (n < 10) - Interpret with Caution",
+        "✅ Robust Sample (n >= 10)"
+    )
+
+
+// ----------------------------------------------------------------------------
+// 13. Titles by Tagged Genre (Bridge Table Traversal)
+// Purpose: Computes title count using the bridge table with dynamic bidirectional
+// cross-filtering. Ensures distinct count of titles across multi-genre tags.
+// ----------------------------------------------------------------------------
+Titles Across All Genre Tags = 
+CALCULATE(
+    DISTINCTCOUNT(fact_titles[title_id]),
+    CROSSFILTER(fact_titles[title_id], bridge_title_genre[title_id], Both)
+)

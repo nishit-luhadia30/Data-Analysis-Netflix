@@ -1,0 +1,92 @@
+genre_id,genre_name,genre_group
+1,Documentary,Documentary
+2,Thriller,Thriller/Crime/Horror
+3,Science fiction,Sci-Fi/Fantasy/Animation
+4,Drama,Sci-Fi/Fantasy/Animation
+5,Horror thriller,Thriller/Crime/Horror
+6,Mystery,Thriller/Crime/Horror
+7,Action,Action/Adventure/Other
+8,Comedy,Comedy
+9,Heist film,Thriller/Crime/Horror
+10,Musical,Music/Concert/Special
+11,Western,Music/Concert/Special
+12,Fantasy,Music/Concert/Special
+13,Romantic comedy,Romance
+14,Action comedy,Comedy
+15,Horror anthology,Thriller/Crime/Horror
+16,Political thriller,Thriller/Crime/Horror
+17,Superhero-Comedy,Sci-Fi/Fantasy/Animation
+18,Horror,Thriller/Crime/Horror
+19,Romance drama,Romance
+20,Anime,Sci-Fi/Fantasy/Animation
+21,Short,Sci-Fi/Fantasy/Animation
+22,Superhero,Sci-Fi/Fantasy/Animation
+23,Heist,Thriller/Crime/Horror
+24,Animation,Sci-Fi/Fantasy/Animation
+25,Family film,Action/Adventure/Other
+26,Action-thriller,Thriller/Crime/Horror
+27,Teen comedy-drama,Comedy
+28,Romantic drama,Romance
+29,Aftershow,Music/Concert/Special
+30,Interview,Music/Concert/Special
+31,Christmas musical,Music/Concert/Special
+32,Science fiction adventure,Sci-Fi/Fantasy/Animation
+33,Variety show,Music/Concert/Special
+34,Comedy-drama,Comedy
+35,Family,Comedy
+36,Supernatural drama,Drama
+37,Romantic teenage drama,Romance
+38,Crime drama,Thriller/Crime/Horror
+39,Psychological thriller drama,Thriller/Crime/Horror
+40,Adventure,Comedy
+41,Black comedy,Comedy
+42,Romance,Romance
+43,Horror comedy,Thriller/Crime/Horror
+44,Christian musical,Music/Concert/Special
+45,Romantic teen drama,Romance
+46,Dark comedy,Comedy
+47,Comedy horror,Thriller/Crime/Horror
+48,Psychological thriller,Thriller/Crime/Horror
+49,Biopic,Drama
+50,Mockumentary,Documentary
+51,Satire,Comedy
+52,One-man show,Music/Concert/Special
+53,Romantic comedy-drama,Romance
+54,Sports-drama,Drama
+55,Zombie,Thriller/Crime/Horror
+56,Psychological horror,Thriller/Crime/Horror
+57,Sports film,Drama
+58,Comedy mystery,Thriller/Crime/Horror
+59,Romantic thriller,Romance
+60,Christmas comedy,Comedy
+61,War-Comedy,Comedy
+62,Holiday,Romance
+63,Adventure-romance,Romance
+64,Horror-thriller,Thriller/Crime/Horror
+65,Dance comedy,Comedy
+66,Stop Motion,Sci-Fi/Fantasy/Animation
+67,Urban fantasy,Sci-Fi/Fantasy/Animation
+68,War,Action/Adventure/Other
+69,Crime thriller,Thriller/Crime/Horror
+70,Teen comedy horror,Thriller/Crime/Horror
+71,Concert Film,Music/Concert/Special
+72,Musical comedy,Comedy
+73,Musicial,Sci-Fi/Fantasy/Animation
+74,Action thriller,Thriller/Crime/Horror
+75,War drama,Drama
+76,Science fiction thriller,Sci-Fi/Fantasy/Animation
+77,Hidden-camera prank comedy,Comedy
+78,Spy thriller,Thriller/Crime/Horror
+79,Animated musical comedy,Sci-Fi/Fantasy/Animation
+80,Variety Show,Music/Concert/Special
+81,Biographical,Comedy
+82,Historical-epic,Drama
+83,Christmas,Comedy
+84,Mentalism special,Music/Concert/Special
+85,Drama-Comedy,Drama
+86,Coming-of-age comedy-drama,Drama
+87,Historical drama,Drama
+88,Making-of,Documentary
+89,Action-adventure,Action/Adventure/Other
+90,Science Fiction,Sci-Fi/Fantasy/Animation
+91,Anthology,Comedy

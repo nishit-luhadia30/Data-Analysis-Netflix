@@ -1,0 +1,116 @@
+raw_genre,genre_group,classification_rule
+Action,Action/Adventure/Other,Pure action feature
+Action comedy,Comedy,Comedy primary hybrid
+Action thriller,Thriller/Crime/Horror,Thriller hybrid
+Action-adventure,Action/Adventure/Other,Action and adventure hybrid
+Action-thriller,Thriller/Crime/Horror,Thriller hybrid
+Action/Comedy,Comedy,Slash compound; comedy hybrid
+Action/Science fiction,Sci-Fi/Fantasy/Animation,Sci-Fi hybrid
+Adventure,Action/Adventure/Other,Adventure feature
+Adventure-romance,Romance,Romance narrative arc
+Adventure/Comedy,Comedy,Comedy hybrid
+Aftershow / Interview,Music/Concert/Special,Non-narrative special/interview format
+Animated musical comedy,Sci-Fi/Fantasy/Animation,Animation primary medium
+Animation,Sci-Fi/Fantasy/Animation,Animation medium
+Animation / Comedy,Sci-Fi/Fantasy/Animation,Animation medium
+Animation / Musicial,Sci-Fi/Fantasy/Animation,Animation medium
+Animation / Science Fiction,Sci-Fi/Fantasy/Animation,Animation medium
+Animation / Short,Sci-Fi/Fantasy/Animation,Animation medium
+Animation/Christmas/Comedy/Adventure,Sci-Fi/Fantasy/Animation,Animation medium
+Animation/Comedy/Adventure,Sci-Fi/Fantasy/Animation,Animation medium
+Animation/Musical/Adventure,Sci-Fi/Fantasy/Animation,Animation medium
+Animation/Superhero,Sci-Fi/Fantasy/Animation,Animation medium
+Anime / Short,Sci-Fi/Fantasy/Animation,Anime / Animation medium
+Anime/Fantasy,Sci-Fi/Fantasy/Animation,Anime / Fantasy medium
+Anime/Science fiction,Sci-Fi/Fantasy/Animation,Anime / Sci-Fi medium
+Anthology/Dark comedy,Comedy,Dark comedy hybrid
+Biographical/Comedy,Comedy,Comedy hybrid
+Biopic,Drama,Biographical drama
+Black comedy,Comedy,Comedy subgenre
+Christian musical,Music/Concert/Special,Musical format
+Christmas comedy,Comedy,Holiday comedy
+Christmas musical,Music/Concert/Special,Musical format
+Christmas/Fantasy/Adventure/Comedy,Comedy,Holiday comedy hybrid
+Comedy,Comedy,Core comedy genre
+Comedy / Musical,Comedy,Musical comedy
+Comedy horror,Thriller/Crime/Horror,Horror hybrid
+Comedy mystery,Thriller/Crime/Horror,Mystery hybrid
+Comedy-drama,Comedy,Comedy-drama hybrid
+Comedy/Fantasy/Family,Comedy,Family comedy hybrid
+Comedy/Horror,Thriller/Crime/Horror,Horror hybrid
+Coming-of-age comedy-drama,Drama,Coming-of-age drama
+Concert Film,Music/Concert/Special,Live musical performance
+Crime drama,Thriller/Crime/Horror,Crime genre
+Crime thriller,Thriller/Crime/Horror,Crime and thriller hybrid
+Dance comedy,Comedy,Comedy hybrid
+Dark comedy,Comedy,Comedy subgenre
+Documentary,Documentary,Core non-fiction documentary
+Drama,Drama,Core drama genre
+Drama / Short,Drama,Dramatic short format
+Drama-Comedy,Drama,Dramatic hybrid
+Drama/Horror,Thriller/Crime/Horror,Horror hybrid
+Family,Action/Adventure/Other,Family general audience
+Family film,Action/Adventure/Other,Family general audience
+Family/Christmas musical,Music/Concert/Special,Musical format
+Family/Comedy-drama,Comedy,Family comedy hybrid
+Fantasy,Sci-Fi/Fantasy/Animation,Speculative fantasy
+Heist,Thriller/Crime/Horror,Crime/heist genre
+Heist film/Thriller,Thriller/Crime/Horror,Crime/thriller hybrid
+Hidden-camera prank comedy,Comedy,Prank comedy format
+Historical drama,Drama,Period drama
+Historical-epic,Drama,Epic drama
+Horror,Thriller/Crime/Horror,Core horror genre
+Horror anthology,Thriller/Crime/Horror,Horror subgenre
+Horror comedy,Thriller/Crime/Horror,Horror hybrid
+Horror thriller,Thriller/Crime/Horror,Horror-thriller hybrid
+Horror-thriller,Thriller/Crime/Horror,Horror-thriller hybrid
+Horror/Crime drama,Thriller/Crime/Horror,Horror-crime hybrid
+Making-of,Documentary,Behind-the-scenes documentary
+Mentalism special,Music/Concert/Special,Stage performance special
+Mockumentary,Documentary,Documentary format parody
+Musical,Music/Concert/Special,Musical theatrical format
+Musical / Short,Music/Concert/Special,Musical short format
+Musical comedy,Comedy,Musical comedy
+Musical/Western/Fantasy,Music/Concert/Special,Musical hybrid
+Mystery,Thriller/Crime/Horror,Core mystery genre
+One-man show,Music/Concert/Special,Solo stage performance
+Political thriller,Thriller/Crime/Horror,Thriller subgenre
+Psychological horror,Thriller/Crime/Horror,Horror subgenre
+Psychological thriller,Thriller/Crime/Horror,Thriller subgenre
+Psychological thriller drama,Thriller/Crime/Horror,Thriller subgenre
+Romance,Romance,Core romance genre
+Romance drama,Romance,Romantic drama
+Romantic comedy,Romance,Core romantic comedy
+Romantic comedy-drama,Romance,Romantic comedy hybrid
+Romantic comedy/Holiday,Romance,Holiday romantic comedy
+Romantic drama,Romance,Romantic drama
+Romantic teen drama,Romance,Teen romantic drama
+Romantic teenage drama,Romance,Teen romantic drama
+Romantic thriller,Romance,Romantic thriller
+Satire,Comedy,Comedy subgenre
+Science fiction,Sci-Fi/Fantasy/Animation,Core sci-fi genre
+Science fiction adventure,Sci-Fi/Fantasy/Animation,Sci-fi adventure
+Science fiction thriller,Sci-Fi/Fantasy/Animation,Sci-fi thriller
+Science fiction/Action,Sci-Fi/Fantasy/Animation,Sci-fi action
+Science fiction/Drama,Sci-Fi/Fantasy/Animation,Sci-fi drama
+Science fiction/Mystery,Sci-Fi/Fantasy/Animation,Sci-fi mystery
+Science fiction/Thriller,Sci-Fi/Fantasy/Animation,Sci-fi thriller
+Sports film,Drama,Sports drama narrative
+Sports-drama,Drama,Sports drama narrative
+Spy thriller,Thriller/Crime/Horror,Thriller subgenre
+Stop Motion,Sci-Fi/Fantasy/Animation,Animation medium
+Superhero,Sci-Fi/Fantasy/Animation,Superhero speculative fiction
+Superhero-Comedy,Sci-Fi/Fantasy/Animation,Superhero hybrid
+Superhero/Action,Sci-Fi/Fantasy/Animation,Superhero hybrid
+Supernatural drama,Drama,Supernatural dramatic narrative
+Teen comedy horror,Thriller/Crime/Horror,Horror hybrid
+Teen comedy-drama,Comedy,Teen comedy hybrid
+Thriller,Thriller/Crime/Horror,Core thriller genre
+Urban fantasy,Sci-Fi/Fantasy/Animation,Fantasy subgenre
+Variety Show,Music/Concert/Special,Broadcast variety special
+Variety show,Music/Concert/Special,Broadcast variety special
+War,Action/Adventure/Other,War military feature
+War drama,Drama,War dramatic feature
+War-Comedy,Comedy,Military comedy satire
+Western,Action/Adventure/Other,Western period genre
+Zombie/Heist,Thriller/Crime/Horror,Zombie/heist hybrid
